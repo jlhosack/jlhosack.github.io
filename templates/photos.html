@@ -1,0 +1,278 @@
+{% extends "base.html" %}
+
+{% block maincontent %}      
+      <!-- Jumbotron Content -->
+<div class="jumbotron row-no-margin">
+  <div class="row">
+    <div class="col-md-4">
+      <img onclick="showGallery(0);" onclick="showGallery();" src="static/img/background.jpg" alt="" class="img-rounded img-responsive gallery-photo">
+    </div>
+    <div class="col-md-4">
+      <img onclick="showGallery(1);" src="static/img/backstage_elf_cast.jpg" alt="" class="img-rounded img-responsive gallery-photo">
+    </div>
+    <div class="col-md-4">
+      <img onclick="showGallery(2);" src="static/img/beauty_servants.jpg" alt="" class="img-rounded img-responsive gallery-photo">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <img onclick="showGallery(3);" src="static/img/northpole_ladies.jpg" alt="" class="img-rounded img-responsive gallery-photo">
+    </div>
+    <div class="col-md-4">
+      <img onclick="showGallery(4);" src="static/img/smokey_joes.jpeg" alt="" class="img-rounded img-responsive gallery-photo">
+    </div>
+    <div class="col-md-4">
+      <img onclick="showGallery(5);" src="static/img/headshot_close.jpg" alt="" class="img-rounded img-responsive gallery-photo">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <img onclick="showGallery(6);" src="static/img/headshot_green.jpg" alt="" class="img-rounded img-responsive gallery-photo">
+    </div>
+    <div class="col-md-4">
+      <img onclick="showGallery(7);" src="static/img/makeup_mirror.JPG" alt="" class="img-rounded img-responsive gallery-photo">
+    </div>
+    <div class="col-md-4">
+      <img onclick="showGallery(8);" src="static/img/julia_stance_lrg.jpg" alt="" class="img-rounded img-responsive gallery-photo">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <img onclick="showGallery(9);" src="static/img/candy_cane_pose.jpg" alt="" class="img-rounded img-responsive gallery-photo">
+    </div>
+    <div class="col-md-4">
+      <img onclick="showGallery(10);" src="static/img/potts_and_chip_backstage.JPG" alt="" class="img-rounded img-responsive gallery-photo">
+    </div>
+    <div class="col-md-4">
+      <img onclick="showGallery(11);" src="static/img/splits_stage.jpg" alt="" class="img-rounded img-responsive gallery-photo">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <img onclick="showGallery(12);" src="static/img/nyc_pose.jpg" alt="" class="img-rounded img-responsive gallery-photo">
+    </div>
+    <div class="col-md-4">
+      <img onclick="showGallery(13);" src="static/img/playhouse_sqr.jpg" alt="" class="img-rounded img-responsive gallery-photo">
+    </div>
+    <div class="col-md-4">
+      <img onclick="showGallery(14);" src="static/img/ready_to_bow_elf.jpg" alt="" class="img-rounded img-responsive gallery-photo">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <img onclick="showGallery(15);" src="static/img/potts_cabinet.jpg" alt="" class="img-rounded img-responsive gallery-photo">
+    </div>
+    <div class="col-md-4">
+      <img onclick="showGallery(16);" src="static/img/upclose_smirk.jpg" alt="" class="img-rounded img-responsive gallery-photo">
+    </div>
+    <div class="col-md-4">
+      <img onclick="showGallery(17);" src="static/img/santa.jpg" alt="" class="img-rounded img-responsive gallery-photo">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <img onclick="showGallery(18);" src="static/img/encore.jpg" alt="" class="img-rounded img-responsive gallery-photo">
+    </div>
+    <div class="col-md-4">
+      <img onclick="showGallery(19);" src="static/img/emily_son_reading.png" alt="" class="img-rounded img-responsive gallery-photo">
+    </div>
+    <div class="col-md-4">
+      <img onclick="showGallery(20);" src="static/img/potts_lumiere_beast.jpg" alt="" class="img-rounded img-responsive gallery-photo">
+    </div>
+  </div>
+</div>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>      
+{% endblock %}
+
+{% block scripts %}
+<script>
+// $(document).ready(function(){
+function showGallery(num){
+var pswpElement = document.querySelectorAll('.pswp')[0];
+
+// build items array
+var items = [
+    {   
+        src: 'static/img/background.jpg',
+        w: 1280,
+        h: 847
+    },
+    {   
+        src: 'static/img/backstage_elf_cast.jpg',
+        w: 960,
+        h: 625
+    },
+    {   
+        src: 'static/img/beauty_servants.jpg',
+        w: 340,
+        h: 227
+    },
+    {   
+        src: 'static/img/northpole_ladies.jpg',
+        w: 3168,
+        h: 4752
+    },
+    {
+        src: 'static/img/smokey_joes.jpeg',
+        w: 505,
+        h: 673
+    },
+    {   
+        src: 'static/img/headshot_close.jpg',
+        w: 3168,
+        h: 4752
+    },
+    {   
+        src: 'static/img/headshot_green.jpg',
+        w: 2048,
+        h: 1414
+    },
+    {
+        src: 'static/img/makeup_mirror.JPG',
+        w: 3648,
+        h: 2736
+    },
+    {   
+        src: 'static/img/julia_stance_lrg.jpg',
+        w: 800,
+        h: 533
+    },
+    {   
+        src: 'static/img/candy_cane_pose.jpg',
+        w: 533,
+        h: 533
+    },
+    {
+        src: 'static/img/potts_and_chip_backstage.JPG',
+        w: 2736,
+        h: 3648
+    },
+    {   
+        src: 'static/img/splits_stage.jpg',
+        w: 1936,
+        h: 1936
+    },
+    {
+        src: '/static/img/nyc_pose.jpg',
+        w: 720,
+        h: 720
+    },
+    {   
+        src: 'static/img/playhouse_sqr.jpg',
+        w: 3263,
+        h: 3523
+    },
+    {   
+        src: 'static/img/ready_to_bow_elf.jpg',
+        w: 960,
+        h: 960
+    },
+    {   
+        src: 'static/img/potts_cabinet.jpg',
+        w: 600,
+        h: 440
+    },
+    {   src: 'static/img/upclose_smirk.jpg',
+        w: 1440,
+        h: 900
+    },
+    {   
+        src: 'static/img/santa.jpg',
+        w: 1484,
+        h: 987
+    },
+    {   
+        src: 'static/img/encore.jpg',
+        w: 960,
+        h: 641
+    },
+    {
+        src: 'static/img/emily_son_reading.png',
+        w: 798,
+        h: 512
+    },
+    {   
+        src: 'static/img/potts_lumiere_beast.jpg',
+        w: 600,
+        h: 417
+    }
+];
+
+var options = {
+    index: 0, // start at first slide
+    shareEl: false,
+    zoomEl: false
+};
+
+var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+gallery.init();
+gallery.goTo(num);
+};
+</script>
+{% endblock %}
