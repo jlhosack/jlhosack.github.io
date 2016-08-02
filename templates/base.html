@@ -33,13 +33,13 @@
         </div>  
         <nav>
           <ul class="nav nav-justified nav-pills">
-            <li {% if indexactive %}class="active"{% endif %}><a href="index.html">Home</a></li>
-            <li {% if aboutactive %}class="active"{% endif %}><a href="about.html">About</a></li>
-            <li {% if resumeactive %}class="active"{% endif %}><a href="resume.html">Resume</a></li>
-            <li {% if avactive %}class="active"{% endif %}><a href="audiovideo.html">Audio + Video</a></li>
-            <li {% if photosactive %}class="active"{% endif %}><a href="photos.html">Photos</a></li>
-            <li {% if pressactive %}class="active"{% endif %}><a href="press.html">Press</a></li>
-            <li {% if contactactive %}class="active"{% endif %}><a href="contact.html">Contact</a></li>
+            <li {% if active == "index" %}class="active"{% endif %}><a href="index.html">Home</a></li>
+            <li {% if active == "about" %}class="active"{% endif %}><a href="about.html">About</a></li>
+            <li {% if active == "resume" %}class="active"{% endif %}><a href="resume.html">Resume</a></li>
+            <li {% if active == "audiovideo" %}class="active"{% endif %}><a href="audiovideo.html">Audio + Video</a></li>
+            <li {% if active == "photos" %}class="active"{% endif %}><a href="photos.html">Photos</a></li>
+            <li {% if active == "press" %}class="active"{% endif %}><a href="press.html">Press</a></li>
+            <li {% if active == "contact" %}class="active"{% endif %}><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
       </div>
